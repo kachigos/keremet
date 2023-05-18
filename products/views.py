@@ -1,6 +1,7 @@
 from rest_framework import generics, filters
+from django_filters.rest_framework import DjangoFilterBackend
 
-from .models import *
+from .filters import ProductFilter
 from .serializers import*
 
 class ProductListView(generics.ListAPIView):
@@ -17,7 +18,8 @@ class SubCategoryListView(generics.ListAPIView):
 
 class CategoryProductListView(generics.ListAPIView):
     serializer_class = ProductSerializer
-    filter_backends = [filters.SearchFilter]
+    filter_backends = [filters.SearchFilter, DjangoFilterBackend]
+    filterset_class = ProductFilter
     search_fields = ['category__name', 'sub_category__name', 'name']
 
     def get_queryset(self):
