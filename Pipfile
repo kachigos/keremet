@@ -10,6 +10,7 @@ python-decouple = "*"
 drf-yasg = "*"
 pillow = "*"
 django-filter = "*"
+gunicorn = "*"
 
 [dev-packages]
 
