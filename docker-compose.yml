@@ -30,29 +30,29 @@ services:
       - .env
     command: python manage.py runserver 0.0.0.0:8000
 
-  nginx:
-      image: linuxserver/swag
-#      image: nginx:latest
-      restart: always
-      environment:
-          - PUID=1000
-          - PGID=1000
-          - TZ=Asia/Bishkek
-          - URL=
-          - SUBDOMAINS=
-          - VALIDATION=http
-          - ONLY_SUBDOMAINS=true
-          - STAGING=false
-      depends_on:
-          - web
-      ports:
-          - "80:80"
-          - "443:443"
-      volumes:
-          - ./nginx/nginx.conf:/config/nginx/site-confs/default.conf
-          - ./media:/usr/media/
-          - lets:/config/keys/
-          - ./static:/usr/static/
+#  nginx:
+#      image: linuxserver/swag
+##      image: nginx:latest
+#      restart: always
+#      environment:
+#          - PUID=1000
+#          - PGID=1000
+#          - TZ=Asia/Bishkek
+#          - URL=
+#          - SUBDOMAINS=
+#          - VALIDATION=http
+#          - ONLY_SUBDOMAINS=true
+#          - STAGING=false
+#      depends_on:
+#          - web
+#      ports:
+#          - "80:80"
+#          - "443:443"
+#      volumes:
+#          - ./nginx/nginx.conf:/config/nginx/site-confs/default.conf
+#          - ./media:/usr/media/
+#          - lets:/config/keys/
+#          - ./static:/usr/static/
 
 volumes:
   postgres_data:
