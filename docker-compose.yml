@@ -32,7 +32,7 @@ services:
 
   nginx:
       image: linuxserver/swag
-№      image: nginx:latest
+#      image: nginx:latest
       restart: always
       environment:
           - PUID=1000
