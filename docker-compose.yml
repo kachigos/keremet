@@ -38,8 +38,8 @@ services:
           - PUID=1000
           - PGID=1000
           - TZ=Asia/Bishkek
-          - URL=keremet.ru
-          - SUBDOMAINS=api
+          - URL=
+          - SUBDOMAINS=
           - VALIDATION=http
           - ONLY_SUBDOMAINS=true
           - STAGING=false
