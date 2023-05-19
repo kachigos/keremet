@@ -11,6 +11,7 @@ drf-yasg = "*"
 pillow = "*"
 django-filter = "*"
 gunicorn = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
