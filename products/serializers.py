@@ -12,16 +12,16 @@ class CharacteristicsSerializer(serializers.ModelSerializer):
         model = Characteristics
         fields = ['left_side', 'right_side']
 
+class SubCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubCategory
+        fields = ('id','name',)
+
 class CategorySerializer(serializers.ModelSerializer):
+    sub_category = SubCategorySerializer(many=True)
 
     class Meta:
         model = Category
-        fields = '__all__'
-
-class SubCategorySerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
-    class Meta:
-        model = SubCategory
         fields = '__all__'
 
 class ProductSerializer(serializers.ModelSerializer):
