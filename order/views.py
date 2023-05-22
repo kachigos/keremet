@@ -86,7 +86,7 @@ class QuestionView(generics.CreateAPIView):
     def create(self, request, *args, **kwargs):
         response = super().create(request, *args, **kwargs)
         data = request.data
-        message_text = "Ticket booking:\n"
+        message_text = "Вопросы:\n"
         for key, value in data.items():
             if key in ["username", "phone"]:
                 message_text += f"{key}: {value}\n"
