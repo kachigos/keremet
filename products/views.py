@@ -7,6 +7,8 @@ from .serializers import*
 class ProductListView(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['category__name', 'sub_category__name', 'name']
 
 class CategoryListView(generics.ListAPIView):
     queryset = Category.objects.all()
