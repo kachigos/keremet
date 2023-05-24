@@ -39,7 +39,7 @@ services:
           - PGID=1000
           - TZ=Asia/Bishkek
           - URL=pegasushorse.net
-          - SUBDOMAINS=
+          - SUBDOMAINS=api
           - VALIDATION=http
           - ONLY_SUBDOMAINS=true
           - STAGING=false
