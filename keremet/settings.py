@@ -159,6 +159,7 @@ CORS_ALLOW_ORIGINS = [
     'http://127.0.0.1:3001',
     'http://13.235.33.123:8000',
     'https://keremet-ru.vercel.app',
+    'https://keremet.ru',
 
 ]
 
@@ -169,6 +170,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://127.0.0.1:3001',
     'http://13.235.33.123:8000',
     'https://keremet-ru.vercel.app',
+    'https://keremet.ru',
 ]
 
 CORS_ALLOW_METHODS = [
