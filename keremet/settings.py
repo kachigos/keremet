@@ -181,3 +181,7 @@ CORS_ALLOW_METHODS = [
     "POST",
     "PUT",
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://api.pegasushorse.net",
+]
