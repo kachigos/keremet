@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 class Category(models.Model):
     name = models.CharField(max_length=200, verbose_name='Категория')
@@ -29,6 +30,12 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name}--{self.category.name}"
+
+
+    def clean(self):
+        if self.sub_category and self.category:
+            if self.sub_category.category != self.category:
+                raise ValidationError("Выбранная подкатегория не принадлежит выбранной категории.")
 
 class Image(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
