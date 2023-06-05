@@ -185,3 +185,19 @@ CORS_ALLOW_METHODS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://api.pegasushorse.net",
 ]
+
+import cloudinary.api
+
+CLOUDINARY_STORAGE = {
+ 'CLOUD_NAME': 'dsfrlxwiu',
+ 'API_KEY': '915623725953648',
+ 'API_SECRET': 'LFMfaeMY-pEtauU4LZUQS2Ugid0'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+cloudinary.config(
+               cloud_name = "dsfrlxwiu",
+               api_key = "915623725953648",
+               api_secret = "LFMfaeMY-pEtauU4LZUQS2Ugid0",
+               secure = True
+               )
